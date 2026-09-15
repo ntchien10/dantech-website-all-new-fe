@@ -62,8 +62,8 @@ export const BentoCard = ({
       onMouseLeave={() => setIsHovered(false)}
       className={cn(
         "group/bento relative rounded-2xl p-7 flex flex-col justify-between overflow-hidden",
-        "bg-white/85 dark:bg-[#0F1117]/80 backdrop-blur-xl border border-slate-200/80 dark:border-white/[0.08] shadow-sm hover:shadow-xl hover:shadow-blue-500/5 dark:hover:shadow-blue-500/10",
-        "transition-all duration-300 hover:border-blue-500/40",
+        "bg-white/85 dark:bg-[#0F1117]/80 backdrop-blur-xl border border-slate-200/90 dark:border-white/[0.12] shadow-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] hover:shadow-xl hover:shadow-blue-500/5 dark:hover:shadow-blue-500/10",
+        "transition-all duration-300 hover:border-blue-500/50",
         className
       )}
     >
@@ -113,7 +113,7 @@ export const BentoCard = ({
         <h3 className="font-heading font-bold text-xl text-slate-900 dark:text-white mb-2 tracking-tight group-hover/bento:text-blue-600 dark:group-hover/bento:text-blue-200 transition-colors duration-200">
           {title}
         </h3>
-        <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed line-clamp-3 group-hover/bento:text-slate-800 dark:group-hover/bento:text-slate-300 transition-colors duration-200">
+        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3 group-hover/bento:text-slate-900 dark:group-hover/bento:text-white transition-colors duration-200">
           {description}
         </p>
         {action && <div className="mt-4">{action}</div>}

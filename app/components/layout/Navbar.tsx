@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { navLinks, siteConfig } from '@/lib/config/site'
 import { useLanguage } from '@/lib/context/LanguageContext'
 import { ThemeToggle } from '@/components/ThemeToggle'
@@ -50,10 +51,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a
+          <Link
             href="/"
             aria-label="DANTECH — Trang chủ"
-            className="relative flex items-center h-full py-1 sm:py-1.5 overflow-visible flex-shrink-0"
+            className="relative flex items-center h-full py-1 sm:py-1.5 overflow-visible flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-md"
           >
             {/* Light Mode Logo (màu nguyên bản) */}
             <Image
@@ -75,7 +76,7 @@ export default function Navbar() {
               style={{ height: '100%', width: 'auto' }}
               priority
             />
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <nav aria-label="Navigation chính" className="hidden md:flex items-center gap-1">
@@ -83,7 +84,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="px-3.5 py-2 text-sm font-medium rounded-lg text-slate-700 hover:text-blue-600 hover:bg-slate-100/80 dark:text-white/80 dark:hover:text-white dark:hover:bg-white/[0.06] transition-colors duration-150"
+                className="px-3.5 py-2 text-sm font-medium rounded-lg text-slate-700 hover:text-blue-600 hover:bg-slate-100/80 dark:text-white/80 dark:hover:text-white dark:hover:bg-white/[0.06] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
               >
                 {t(link.labelVi, link.labelEn)}
               </a>
@@ -99,14 +100,14 @@ export default function Navbar() {
             <button
               onClick={() => setLang(lang === 'vi' ? 'en' : 'vi')}
               aria-label={`Chuyển sang ${lang === 'vi' ? 'English' : 'Tiếng Việt'}`}
-              className="text-xs font-semibold font-heading px-2.5 py-1.5 rounded-xl border border-slate-200/80 hover:border-slate-300 text-slate-700 hover:text-slate-900 bg-white/70 hover:bg-slate-100/80 dark:border-white/15 dark:hover:border-white/40 dark:text-white/80 dark:hover:text-white dark:bg-white/[0.03] transition-all duration-150 cursor-pointer shadow-sm"
+              className="text-xs font-semibold font-heading px-2.5 py-1.5 rounded-xl border border-slate-200/80 hover:border-slate-300 text-slate-700 hover:text-slate-900 bg-white/70 hover:bg-slate-100/80 dark:border-white/15 dark:hover:border-white/40 dark:text-white/80 dark:hover:text-white dark:bg-white/[0.03] transition-all duration-150 cursor-pointer shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             >
               {lang === 'vi' ? 'EN' : 'VI'}
             </button>
 
             <a
               href={siteConfig.phoneHref}
-              className="text-sm font-semibold font-heading px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white shadow-md shadow-blue-500/20 border border-blue-400/30 transition-all duration-150 hover:scale-[1.02] active:scale-[0.98]"
+              className="text-sm font-semibold font-heading px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white shadow-md shadow-blue-500/20 border border-blue-400/30 transition-all duration-150 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             >
               {t('Liên hệ ngay', 'Contact Us')}
             </a>
@@ -122,7 +123,7 @@ export default function Navbar() {
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               onClick={() => setMenuOpen((v) => !v)}
-              className="p-2 rounded-lg text-slate-700 hover:bg-slate-100 dark:text-white/90 dark:hover:bg-white/10 transition-colors cursor-pointer"
+              className="p-2 rounded-lg text-slate-700 hover:bg-slate-100 dark:text-white/90 dark:hover:bg-white/10 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             >
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
                 {menuOpen ? (

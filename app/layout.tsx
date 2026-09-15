@@ -19,11 +19,11 @@ const inter = Inter({
   display: 'swap',
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dantech.com.vn'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'DANTECH',
+  title: 'DANTECH — Giải pháp Công nghệ & Chuyển đổi số Doanh nghiệp',
   description:
     'DANTECH cung cấp giải pháp công nghệ toàn diện: thiết kế website, thương mại điện tử, phần mềm quản lý và ứng dụng web tùy chỉnh cho doanh nghiệp Việt Nam.',
   keywords:
@@ -34,10 +34,19 @@ export const metadata: Metadata = {
     locale: 'vi_VN',
     url: 'https://dantech.com.vn',
     siteName: 'DANTECH',
-    title: 'DANTECH',
+    title: 'DANTECH — Giải pháp Công nghệ & Chuyển đổi số Doanh nghiệp',
     description:
       'Đồng hành cùng doanh nghiệp trong hành trình chuyển đổi số — từ website thương hiệu đến hệ thống quản lý toàn diện.',
     images: [{ url: '/images/logo/logo_DANTECH_PNG.png', width: 1200, height: 630, alt: 'DANTECH' }],
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/images/logo/icon.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/images/logo/icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   robots: { index: true, follow: true },
 }
@@ -77,6 +86,14 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground font-body selection:bg-blue-500/30 selection:text-white transition-colors duration-200">
+        {/* Accessibility Skip Link */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-blue-600 focus:text-white font-medium shadow-lg"
+        >
+          Chuyển đến nội dung chính
+        </a>
+
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LanguageProvider>
             {children}

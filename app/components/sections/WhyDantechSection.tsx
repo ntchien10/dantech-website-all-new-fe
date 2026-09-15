@@ -56,7 +56,7 @@ export default function WhyDantechSection() {
     <section
       id="about"
       aria-label={t('Về DANTECH — Tại sao chọn chúng tôi & Đội ngũ', 'About DANTECH — Why Choose Us & Core Team')}
-      className="bg-background py-20 md:py-28 transition-colors duration-300 relative"
+      className="bg-background py-20 md:py-28 transition-colors duration-300 relative border-t border-slate-200/70 dark:border-white/[0.06]"
     >
       <div id="why" className="absolute -top-20" />
       <div id="team" className="absolute -top-20" />
@@ -78,7 +78,7 @@ export default function WhyDantechSection() {
                 <span key={i}>{line}{i === 0 && <br />}</span>
               ))}
             </h2>
-            <p className="text-base text-slate-600 dark:text-muted leading-relaxed mb-8 max-w-lg">
+            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-8 max-w-lg">
               {t(
                 'Không chỉ xây dựng phần mềm — DANTECH xây dựng mối quan hệ đối tác dài hạn, đồng hành cùng doanh nghiệp qua từng giai đoạn phát triển.',
                 'Not just building software — DANTECH builds long-term partnerships, accompanying businesses through every stage of growth.',
@@ -87,7 +87,7 @@ export default function WhyDantechSection() {
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 text-sm font-semibold font-heading text-accent hover:underline underline-offset-4 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold font-heading text-blue-600 dark:text-cyan-400 hover:underline underline-offset-4 transition-colors"
             >
               {t('Bắt đầu hợp tác', 'Start collaboration')}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
@@ -101,7 +101,7 @@ export default function WhyDantechSection() {
             {whyReasons.map((reason, i) => (
               <div
                 key={reason.icon}
-                className={`p-6 rounded-2xl bg-surface border border-slate-200/80 dark:border-white/[0.08] shadow-sm dark:shadow-none hover:border-blue-500/40 hover:bg-surface-2 hover:shadow-lg hover:shadow-blue-500/5 hover:-translate-y-0.5 transition-all duration-300 reveal ${visible ? 'is-visible' : ''} reveal-delay-${Math.min(i + 1, 4)}`}
+                className={`p-6 rounded-2xl bg-surface border border-slate-200/90 dark:border-white/[0.12] shadow-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] hover:border-blue-500/40 hover:bg-surface-2 hover:shadow-lg hover:shadow-blue-500/5 hover:-translate-y-0.5 transition-all duration-300 reveal ${visible ? 'is-visible' : ''} reveal-delay-${Math.min(i + 1, 4)}`}
               >
                 <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4">
                   {icons[reason.icon]}
@@ -109,7 +109,7 @@ export default function WhyDantechSection() {
                 <h3 className="font-heading font-semibold text-base text-slate-900 dark:text-white mb-2">
                   {t(reason.titleVi, reason.titleEn)}
                 </h3>
-                <p className="text-sm text-slate-600 dark:text-muted leading-relaxed">
+                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                   {t(reason.descVi, reason.descEn)}
                 </p>
               </div>
@@ -123,7 +123,7 @@ export default function WhyDantechSection() {
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className="group relative rounded-2xl sm:rounded-3xl border border-slate-200/80 dark:border-white/[0.08] bg-surface hover:bg-surface-2 p-5 sm:p-6 flex flex-col items-center text-center shadow-sm hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-500/40 hover:-translate-y-1.5 transition-all duration-300"
+                className="group relative rounded-2xl sm:rounded-3xl border border-slate-200/90 dark:border-white/[0.12] bg-surface hover:bg-surface-2 p-5 sm:p-6 flex flex-col items-center text-center shadow-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-500/40 hover:-translate-y-1.5 transition-all duration-300"
               >
                 {/* Viền sáng nhẹ trên đỉnh card khi hover */}
                 <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl sm:rounded-t-3xl" />
@@ -146,8 +146,8 @@ export default function WhyDantechSection() {
                   {member.name}
                 </h3>
 
-                {/* Chức danh: Font nhỏ hơn, màu sắc nhẹ hơn (text-slate-600) */}
-                <p className="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+                {/* Chức danh: Font nhỏ hơn, màu sắc nhẹ hơn (text-slate-600 dark:text-slate-300) */}
+                <p className="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
                   {member.role}
                 </p>
               </div>

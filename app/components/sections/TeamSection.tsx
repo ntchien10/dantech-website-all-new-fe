@@ -52,14 +52,14 @@ export default function TeamSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8"
+        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8"
       >
         {teamMembers.map((member, index) => {
           return (
             <motion.div
               key={member.name}
               variants={cardVariants}
-              className="group relative rounded-2xl sm:rounded-3xl border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-[#0f1117]/80 backdrop-blur-md p-5 sm:p-6 flex flex-col items-center text-center shadow-sm hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-500/40 hover:-translate-y-1.5 transition-all duration-300"
+              className="group relative rounded-2xl sm:rounded-3xl border border-slate-200/90 dark:border-white/[0.12] bg-white/80 dark:bg-[#0f1117]/80 backdrop-blur-md p-5 sm:p-6 flex flex-col items-center text-center shadow-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-500/40 hover:-translate-y-1.5 transition-all duration-300"
             >
               {/* Viền sáng nhẹ trên đỉnh card khi hover */}
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl sm:rounded-t-3xl" />
@@ -83,8 +83,8 @@ export default function TeamSection() {
                 {member.name}
               </h3>
 
-              {/* Chức danh / Nơi công tác: Font nhỏ hơn, màu sắc nhẹ hơn (text-slate-600) */}
-              <p className="text-sm font-medium text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">
+              {/* Chức danh / Nơi công tác: Font nhỏ hơn, màu sắc nhẹ hơn (text-slate-600 dark:text-slate-300) */}
+              <p className="text-sm font-medium text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed">
                 {member.role}
               </p>
             </motion.div>

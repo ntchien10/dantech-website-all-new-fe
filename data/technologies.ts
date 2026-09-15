@@ -1,3 +1,10 @@
+export interface TechStackItem {
+  name: string
+  label: string
+  category: 'frontend' | 'backend' | 'database' | 'devops'
+  highlight?: boolean
+}
+
 export const techCategories = [
   {
     id: "frontend",
@@ -7,21 +14,21 @@ export const techCategories = [
   },
   {
     id: "backend",
-    labelVi: "Backend",
-    labelEn: "Backend",
-    items: ["Java Spring Boot", "Node.js", "Express", "REST API"],
+    labelVi: "Backend & API",
+    labelEn: "Backend & API",
+    items: ["Java Spring Boot", "Node.js", "Python", "Apache Kafka"],
   },
   {
     id: "database",
     labelVi: "Cơ sở dữ liệu",
     labelEn: "Database",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
+    items: ["PostgreSQL", "Oracle", "MySQL", "Redis"],
   },
   {
     id: "devops",
     labelVi: "Cloud & DevOps",
     labelEn: "Cloud & DevOps",
-    items: ["AWS", "Vercel", "Docker", "Nginx", "CI/CD"],
+    items: ["AWS", "Docker", "Kubernetes", "Vercel", "Nginx"],
   },
 ] as const;
 

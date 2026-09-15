@@ -71,15 +71,21 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold font-heading uppercase tracking-widest text-slate-400 dark:text-white/50 mb-5">
+            <h3 className="text-sm font-semibold font-heading uppercase tracking-widest text-slate-600 dark:text-white/50 mb-3">
               {t('Dịch vụ', 'Services')}
             </h3>
-            <ul className="flex flex-col gap-3">
-              {footerServices.map((s) => (
+            <ul className="flex flex-col gap-1">
+              {[
+                { vi: 'Thiết kế & Phát triển Website', en: 'Website Design & Development' },
+                { vi: 'Nền tảng Thương mại Điện tử', en: 'E-Commerce Platform' },
+                { vi: 'Phần mềm Quản lý Doanh nghiệp', en: 'Business Management Software' },
+                { vi: 'Ứng dụng Web Tùy biến', en: 'Custom Web Applications' },
+                { vi: 'Bảo trì & Tối ưu Hệ thống', en: 'Maintenance & Optimization' },
+              ].map((s) => (
                 <li key={s.vi}>
                   <a
                     href="#services"
-                    className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-white transition-colors duration-150"
+                    className="inline-flex items-center min-h-[44px] py-2 text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-white transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-md"
                   >
                     {t(s.vi, s.en)}
                   </a>
@@ -90,10 +96,10 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold font-heading uppercase tracking-widest text-slate-400 dark:text-white/50 mb-5">
+            <h3 className="text-sm font-semibold font-heading uppercase tracking-widest text-slate-600 dark:text-white/50 mb-3">
               {t('Công ty', 'Company')}
             </h3>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-1">
               {[
                 { href: '#about', vi: 'Về DANTECH', en: 'About Us' },
                 { href: '#projects', vi: 'Dự án', en: 'Projects' },
@@ -101,7 +107,10 @@ export default function Footer() {
                 { href: '#why', vi: 'Tại sao chọn chúng tôi', en: 'Why Choose Us' },
               ].map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-white transition-colors duration-150">
+                  <a
+                    href={l.href}
+                    className="inline-flex items-center min-h-[44px] py-2 text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-white transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-md"
+                  >
                     {t(l.vi, l.en)}
                   </a>
                 </li>
@@ -111,16 +120,16 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold font-heading uppercase tracking-widest text-slate-400 dark:text-white/50 mb-5">
+            <h3 className="text-sm font-semibold font-heading uppercase tracking-widest text-slate-600 dark:text-white/50 mb-3">
               {t('Liên hệ', 'Contact')}
             </h3>
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-2">
               <li>
                 <a
                   href={siteConfig.phoneHref}
-                  className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-white transition-colors"
+                  className="inline-flex items-center gap-3 min-h-[44px] py-2 text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-md"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 mt-0.5" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0" aria-hidden="true">
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.2 2 2 0 012.03 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
                   </svg>
                   {siteConfig.phone}
@@ -129,9 +138,9 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-white transition-colors"
+                  className="inline-flex items-center gap-3 min-h-[44px] py-2 text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-md"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 mt-0.5" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0" aria-hidden="true">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
@@ -153,10 +162,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-slate-200 dark:border-white/10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-slate-500 dark:text-white/40">
+          <p className="text-xs text-slate-500 dark:text-white/55">
             © {year} {siteConfig.fullName}. {t('Bảo lưu mọi quyền.', 'All rights reserved.')}
           </p>
-          <p className="text-xs text-slate-400 dark:text-white/30">
+          <p className="text-xs text-slate-500 dark:text-white/50">
             {t('Thiết kế & phát triển bởi DANTECH', 'Designed & developed by DANTECH')}
           </p>
         </div>

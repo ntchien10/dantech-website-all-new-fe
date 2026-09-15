@@ -245,3 +245,11 @@ h1, h2, h3, h4, h5, h6 {
   background-image: conic-gradient(var(--conic-position, from 180deg at 50% 50%), var(--tw-gradient-stops));
 }
 
+/* ── Windows High Contrast & Accessibility ── */
+@media (forced-colors: active) {
+  .gradient-text,
+  [class*="bg-clip-text"] {
+    -webkit-text-fill-color: currentColor !important;
+    background: none !important;
+  }
+}

@@ -25,7 +25,7 @@ export default function ServicesSection() {
     <section
       id="services"
       aria-label={t('Dịch vụ & Giải pháp', 'Services & Solutions')}
-      className="bg-background py-24 md:py-32 relative overflow-hidden transition-colors duration-200"
+      className="bg-background py-20 md:py-28 relative overflow-hidden transition-colors duration-200 border-t border-slate-200/70 dark:border-white/[0.06]"
     >
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 -left-48 w-96 h-96 rounded-full bg-blue-600/[0.04] blur-[120px] pointer-events-none" />
@@ -77,8 +77,8 @@ export default function ServicesSection() {
                   </div>
                   <div className="p-3 rounded-lg bg-white dark:bg-white/[0.02] border border-slate-200/70 dark:border-white/[0.04] shadow-xs">
                     <div className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Bảo mật dữ liệu</div>
-                    <div className="text-base font-bold text-cyan-600 dark:text-cyan-400 flex items-center gap-1 mt-0.5">
-                      <ShieldCheck className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
+                    <div className="text-base font-bold text-cyan-700 dark:text-cyan-400 flex items-center gap-1 mt-0.5">
+                      <ShieldCheck className="w-4 h-4 text-cyan-700 dark:text-cyan-400" />
                       End-to-End
                     </div>
                   </div>
@@ -104,7 +104,7 @@ export default function ServicesSection() {
               </div>
             }
             action={
-              <div className="flex items-center gap-2 text-xs font-semibold text-cyan-600 dark:text-cyan-400 group-hover/bento:text-cyan-500 dark:group-hover/bento:text-cyan-300 group-hover/bento:translate-x-1 transition-all duration-200">
+              <div className="flex items-center gap-2 text-xs font-semibold text-cyan-700 dark:text-cyan-400 group-hover/bento:text-cyan-800 dark:group-hover/bento:text-cyan-300 group-hover/bento:translate-x-1 transition-all duration-200">
                 <span>{t('Khám phá kiến trúc chi tiết', 'Explore Full Architecture')}</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </div>
@@ -161,7 +161,7 @@ export default function ServicesSection() {
             )}
             spotlightColor="rgba(16, 185, 129, 0.2)"
             action={
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 group-hover/bento:text-emerald-500 dark:group-hover/bento:text-emerald-300 transition-colors">
+              <div className="flex items-center gap-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400 group-hover/bento:text-emerald-800 dark:group-hover/bento:text-emerald-300 transition-colors">
                 <span>{t('Tối ưu hóa quy trình', 'Optimize Workflows')}</span>
                 <ArrowUpRight className="w-3 h-3" />
               </div>
@@ -199,7 +199,7 @@ export default function ServicesSection() {
             )}
             spotlightColor="rgba(245, 158, 11, 0.2)"
             action={
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-amber-600 dark:text-amber-400 group-hover/bento:text-amber-500 dark:group-hover/bento:text-amber-300 transition-colors">
+              <div className="flex items-center gap-1.5 text-xs font-semibold text-amber-700 dark:text-amber-400 group-hover/bento:text-amber-800 dark:group-hover/bento:text-amber-300 transition-colors">
                 <span>{t('Xem gói hỗ trợ kỹ thuật', 'Explore Support Tiers')}</span>
                 <ArrowUpRight className="w-3 h-3" />
               </div>
