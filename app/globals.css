@@ -1,26 +1,247 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Light Mode Design Tokens (Default) ── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --dt-background:      #F8FAFC;
+  --dt-surface:         #FFFFFF;
+  --dt-surface-2:       #F1F5F9;
+  --dt-surface-hover:   #E2E8F0;
+  --dt-foreground:      #0F172A;
+  --dt-primary:         #2563EB;
+  --dt-secondary:       #475569;
+  --dt-muted:           #64748B;
+  --dt-muted-light:     #94A3B8;
+  --dt-border:          rgba(0, 0, 0, 0.08);
+  --dt-border-strong:   #E2E8F0;
+  --dt-border-light:    rgba(0, 0, 0, 0.05);
+  --dt-accent:          #2563EB;
+  --dt-accent-cyan:     #0284C7;
+  --dt-accent-violet:   #7C3AED;
+  --dt-accent-light:    rgba(37, 99, 235, 0.08);
+  --dt-hero-bg:         #F8FAFC;
 }
 
+/* ── Dark Mode Design Tokens ── */
+.dark {
+  --dt-background:      #08090C;
+  --dt-surface:         #0F1117;
+  --dt-surface-2:       #161922;
+  --dt-surface-hover:   #1A1D27;
+  --dt-foreground:      #F8FAFC;
+  --dt-primary:         #3B82F6;
+  --dt-secondary:       #CBD5E1;
+  --dt-muted:           #94A3B8;
+  --dt-muted-light:     #64748B;
+  --dt-border:          rgba(255, 255, 255, 0.08);
+  --dt-border-strong:   #1F2430;
+  --dt-border-light:    rgba(255, 255, 255, 0.12);
+  --dt-accent:          #3B82F6;
+  --dt-accent-cyan:     #06B6D4;
+  --dt-accent-violet:   #8B5CF6;
+  --dt-accent-light:    rgba(59, 130, 246, 0.12);
+  --dt-hero-bg:         #08090C;
+}
+
+/* ── Tailwind Theme Tokens ── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-primary:      var(--dt-primary);
+  --color-secondary:    var(--dt-secondary);
+  --color-accent:       var(--dt-accent);
+  --color-accent-cyan:  var(--dt-accent-cyan);
+  --color-accent-violet:var(--dt-accent-violet);
+  --color-accent-light: var(--dt-accent-light);
+  --color-background:   var(--dt-background);
+  --color-surface:      var(--dt-surface);
+  --color-surface-2:    var(--dt-surface-2);
+  --color-surface-hover:var(--dt-surface-hover);
+  --color-foreground:   var(--dt-foreground);
+  --color-muted:        var(--dt-muted);
+  --color-muted-light:  var(--dt-muted-light);
+  --color-border:       var(--dt-border);
+  --color-border-strong:var(--dt-border-strong);
+  --color-hero-bg:      var(--dt-hero-bg);
+
+  /* Fonts */
+  --font-heading: var(--font-plus-jakarta-sans);
+  --font-body:    var(--font-inter);
+  --font-sans:    var(--font-plus-jakarta-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--dt-background);
+  color: var(--dt-foreground);
+  font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.025em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ── Premium Glassmorphism & Surface Utilities ── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.dark .glass-panel {
+  background: rgba(15, 17, 23, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill {
+  background: rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.dark .glass-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dropdown {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.dark .glass-dropdown {
+  background: rgba(15, 17, 23, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ── Glow Effects ── */
+.glow-blue {
+  box-shadow: 0 0 45px -10px rgba(59, 130, 246, 0.35);
+}
+
+.glow-subtle {
+  box-shadow: 0 0 60px -15px rgba(59, 130, 246, 0.2), 0 0 35px -15px rgba(6, 182, 212, 0.15);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.3);
+}
+
+/* ── Shimmer & Highlight Animations ── */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* ── Metallic & Electric Blue Gradient Text ── */
+.text-gradient-hero {
+  background: linear-gradient(135deg, #FFFFFF 20%, #93C5FD 65%, #3B82F6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Keyframe Animations ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease both;
+}
+
+/* ── Scroll-reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity  0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.40s; }
+.reveal-delay-6 { transition-delay: 0.48s; }
+
+/* ── Conic Gradient Utility for Lamp ── */
+.bg-gradient-conic {
+  background-image: conic-gradient(var(--conic-position, from 180deg at 50% 50%), var(--tw-gradient-stops));
+}
+
